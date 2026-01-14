@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AstraWorks — Web Dev Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="theme-dark">
+  <header class="site-header site-header--dark">
+    <div class="container header-inner">
+      <a class="brand brand--dark" href="#">Astra<span>Works</span></a>
+      <nav class="primary-nav primary-nav--center" aria-label="Primary navigation">
+        <ul class="nav-list">
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="about" class="hero hero--split">
+      <div class="container hero-inner">
+        <div class="hero-visual" aria-hidden="true">
+          <!-- decorative placeholder: a simple gradient block to suggest an illustration -->
+          <div class="visual-block"></div>
+        </div>
+        <div class="hero-text">
+          <h1>Creating Modern Web Experiences</h1>
+          <p class="lead">Learn the foundations of the web with Internvia. This page is built using semantic HTML and a bold visual design.</p>
+          <div class="hero-actions">
+            <a class="btn-outline" href="#">View My Work</a>
+            <a class="btn-ghost" href="#contact">Contact</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="section">
+      <div class="container">
+        <h2 class="section-title">Skills</h2>
+        <div class="skills-grid">
+          <article class="skill-card">
+            <h3>HTML5</h3>
+            <p>The backbone of every website.</p>
+          </article>
+          <article class="skill-card">
+            <h3>CSS3</h3>
+            <p>The art of styling and layouts.</p>
+          </article>
+          <article class="skill-card">
+            <h3>Responsive</h3>
+            <p>Websites that work on every screen.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section bg-contrast">
+      <div class="container">
+        <h2 class="section-title">Contact</h2>
+        <p>Have a project or question? Reach out at <a href="mailto:hello@astraworks.example">hello@astraworks.example</a>.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer site-footer--dark">
+    <div class="container footer-inner">
+      <p>Built by a Developer in Training | Internvia Week 1</p>
+      <p class="small">© <span id="year"></span> AstraWorks</p>
+    </div>
+  </footer>
+
+  <script>
+    // Set current year in footer
+    (function () {
+      document.getElementById('year').textContent = new Date().getFullYear();
+    })();
+  </script>
+</body>
+</html>
