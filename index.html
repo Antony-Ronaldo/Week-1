@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="AstraWorks - A modern web development portfolio showcasing HTML, CSS, and responsive design skills.">
   <title>AstraWorks — Web Dev Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
@@ -11,10 +12,16 @@
   <header class="site-header site-header--dark">
     <div class="container header-inner">
       <a class="brand brand--dark" href="#">Astra<span>Works</span></a>
-      <nav class="primary-nav primary-nav--center" aria-label="Primary navigation">
+      <button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" id="menuToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="primary-nav primary-nav--center" aria-label="Primary navigation" id="navMenu">
         <ul class="nav-list">
           <li><a href="#about">About</a></li>
           <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
@@ -25,15 +32,25 @@
     <section id="about" class="hero hero--split">
       <div class="container hero-inner">
         <div class="hero-visual" aria-hidden="true">
-          <!-- decorative placeholder: a simple gradient block to suggest an illustration -->
-          <div class="visual-block"></div>
+          <div class="visual-block">
+            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" class="hero-shape">
+              <defs>
+                <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" style="stop-color:#ff6b6b;stop-opacity:1" />
+                  <stop offset="100%" style="stop-color:#ffd166;stop-opacity:1" />
+                </linearGradient>
+              </defs>
+              <rect x="20" y="20" width="160" height="160" rx="20" fill="url(#grad1)" opacity="0.8"/>
+              <circle cx="100" cy="100" r="40" fill="none" stroke="#fff" stroke-width="2" opacity="0.6"/>
+            </svg>
+          </div>
         </div>
         <div class="hero-text">
-          <h1>Creating Modern Web Experiences</h1>
-          <p class="lead">Learn the foundations of the web with Internvia. This page is built using semantic HTML and a bold visual design.</p>
+          <h1>Creating Modern <span class="gradient-text">Web Experiences</span></h1>
+          <p class="lead">Welcome to AstraWorks! I'm passionate about building beautiful, responsive websites using semantic HTML, CSS3, and modern web standards.</p>
           <div class="hero-actions">
-            <a class="btn-outline" href="#">View My Work</a>
-            <a class="btn-ghost" href="#contact">Contact</a>
+            <a class="btn-primary" href="#projects">View My Work</a>
+            <a class="btn-secondary" href="#contact">Get In Touch</a>
           </div>
         </div>
       </div>
@@ -41,28 +58,118 @@
 
     <section id="skills" class="section">
       <div class="container">
-        <h2 class="section-title">Skills</h2>
+        <h2 class="section-title">My Skills</h2>
+        <p class="section-subtitle">Here are the technologies and techniques I specialize in:</p>
         <div class="skills-grid">
-          <article class="skill-card">
+          <article class="skill-card" style="--delay: 0s">
+            <div class="skill-icon">📝</div>
             <h3>HTML5</h3>
-            <p>The backbone of every website.</p>
+            <p>Semantic markup and accessibility-first structure.</p>
+            <div class="skill-level">
+              <div class="progress-bar" style="width: 90%"></div>
+            </div>
           </article>
-          <article class="skill-card">
+          <article class="skill-card" style="--delay: 0.1s">
+            <div class="skill-icon">🎨</div>
             <h3>CSS3</h3>
-            <p>The art of styling and layouts.</p>
+            <p>Modern layouts, animations, and responsive design.</p>
+            <div class="skill-level">
+              <div class="progress-bar" style="width: 85%"></div>
+            </div>
           </article>
-          <article class="skill-card">
-            <h3>Responsive</h3>
-            <p>Websites that work on every screen.</p>
+          <article class="skill-card" style="--delay: 0.2s">
+            <div class="skill-icon">📱</div>
+            <h3>Responsive Design</h3>
+            <p>Websites that work beautifully on every device.</p>
+            <div class="skill-level">
+              <div class="progress-bar" style="width: 88%"></div>
+            </div>
+          </article>
+          <article class="skill-card" style="--delay: 0.3s">
+            <div class="skill-icon">⚙️</div>
+            <h3>JavaScript</h3>
+            <p>Interactive features and dynamic functionality.</p>
+            <div class="skill-level">
+              <div class="progress-bar" style="width: 75%"></div>
+            </div>
+          </article>
+          <article class="skill-card" style="--delay: 0.4s">
+            <div class="skill-icon">♿</div>
+            <h3>Accessibility</h3>
+            <p>WCAG compliant and inclusive web design.</p>
+            <div class="skill-level">
+              <div class="progress-bar" style="width: 82%"></div>
+            </div>
+          </article>
+          <article class="skill-card" style="--delay: 0.5s">
+            <div class="skill-icon">🚀</div>
+            <h3>Performance</h3>
+            <p>Fast-loading, optimized web experiences.</p>
+            <div class="skill-level">
+              <div class="progress-bar" style="width: 80%"></div>
+            </div>
           </article>
         </div>
       </div>
     </section>
 
-    <section id="contact" class="section bg-contrast">
+    <section id="projects" class="section bg-contrast">
       <div class="container">
-        <h2 class="section-title">Contact</h2>
-        <p>Have a project or question? Reach out at <a href="mailto:hello@astraworks.example">hello@astraworks.example</a>.</p>
+        <h2 class="section-title">Recent Projects</h2>
+        <p class="section-subtitle">Check out some of my work:</p>
+        <div class="projects-grid">
+          <article class="project-card">
+            <div class="project-image"></div>
+            <h3>Portfolio Website</h3>
+            <p>A modern, responsive portfolio built with HTML and CSS.</p>
+            <a href="#" class="project-link">View Project →</a>
+          </article>
+          <article class="project-card">
+            <div class="project-image"></div>
+            <h3>Landing Page</h3>
+            <p>A sleek landing page with smooth animations and interactions.</p>
+            <a href="#" class="project-link">View Project →</a>
+          </article>
+          <article class="project-card">
+            <div class="project-image"></div>
+            <h3>Web Components</h3>
+            <p>Reusable components demonstrating modern CSS techniques.</p>
+            <a href="#" class="project-link">View Project →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact-section">
+      <div class="container">
+        <h2 class="section-title">Let's Connect</h2>
+        <p class="section-subtitle">Have a project in mind or just want to chat? I'd love to hear from you!</p>
+        <div class="contact-content">
+          <form class="contact-form" id="contactForm" aria-label="Contact form">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" required aria-required="true" placeholder="Your name">
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required aria-required="true" placeholder="your@email.com">
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" required aria-required="true" placeholder="Tell me about your project..."></textarea>
+            </div>
+            <button type="submit" class="btn-primary btn-submit">Send Message</button>
+          </form>
+          <div class="contact-info">
+            <h3>Other Ways to Reach Me</h3>
+            <ul class="contact-links">
+              <li><a href="mailto:hello@astraworks.example">📧 hello@astraworks.example</a></li>
+              <li><a href="#" target="_blank" rel="noopener noreferrer">🔗 LinkedIn</a></li>
+              <li><a href="#" target="_blank" rel="noopener noreferrer">💻 GitHub</a></li>
+              <li><a href="#" target="_blank" rel="noopener noreferrer">𝕏 Twitter</a></li>
+            </ul>
+          </div>
+        </div>
       </div>
     </section>
   </main>
@@ -79,6 +186,59 @@
     (function () {
       document.getElementById('year').textContent = new Date().getFullYear();
     })();
+
+    // Mobile menu toggle
+    const menuToggle = document.getElementById('menuToggle');
+    const navMenu = document.getElementById('navMenu');
+    
+    menuToggle.addEventListener('click', () => {
+      const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+      menuToggle.setAttribute('aria-expanded', !isExpanded);
+      navMenu.classList.toggle('active');
+    });
+
+    // Close menu when a link is clicked
+    document.querySelectorAll('.nav-list a').forEach(link => {
+      link.addEventListener('click', () => {
+        menuToggle.setAttribute('aria-expanded', 'false');
+        navMenu.classList.remove('active');
+      });
+    });
+
+    // Smooth scroll behavior
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        if (href !== '#' && document.querySelector(href)) {
+          e.preventDefault();
+          document.querySelector(href).scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+
+    // Contact form handling
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+      contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const submitBtn = this.querySelector('.btn-submit');
+        const originalText = submitBtn.textContent;
+        
+        // Simulate form submission
+        submitBtn.textContent = 'Sending...';
+        submitBtn.disabled = true;
+        
+        setTimeout(() => {
+          submitBtn.textContent = '✓ Message Sent!';
+          this.reset();
+          
+          setTimeout(() => {
+            submitBtn.textContent = originalText;
+            submitBtn.disabled = false;
+          }, 3000);
+        }, 500);
+      });
+    }
   </script>
 </body>
 </html>
